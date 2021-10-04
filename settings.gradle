@@ -1,0 +1,25 @@
+pluginManagement {
+    plugins {
+        id 'application'
+        id 'org.jetbrains.kotlin.jvm' version '1.5.30'
+        id 'org.jlleitschuh.gradle.ktlint' version '10.2.0'
+    }
+}
+
+rootProject.name = 'delivery-arrow-app'
+
+include 'delivery:domain'
+project(':delivery:domain').name = 'delivery-domain'
+include 'delivery:application'
+project(':delivery:application').name = 'delivery-application'
+include 'delivery:adapter'
+project(':delivery:adapter').name = 'delivery-adapter'
+
+include 'core:domain'
+project(':core:domain').name = 'core-domain'
+
+include 'infrastructure:files'
+project(':infrastructure:files').name = 'infrastructure-files'
+
+include ':main'
+project(':main').name = 'main'
